@@ -2,7 +2,7 @@
  * loads and decorates the hero banner block
  * @param {Element} block The block element
  */
-export default async function decorate(block) {
+export default function decorate(block) {
   const rows = [...block.children];
 
   // Row containing a heading = content row; first other row = metadata row
@@ -12,11 +12,11 @@ export default async function decorate(block) {
   const metaCells = metaRow ? [...metaRow.children] : [];
   const contentCells = contentRow ? [...contentRow.children] : [];
 
-  const categoryCell = metaCells[0] ?? null;
-  const dateCell = metaCells[1] ?? null;
-  const readTimeCell = metaCells[2] ?? null;
-  const headingCell = contentCells[0] ?? null;
-  const imageCell = contentCells[1] ?? null;
+  const categoryCell = metaCells[0];
+  const dateCell = metaCells[1];
+  const readTimeCell = metaCells[2];
+  const headingCell = contentCells[0];
+  const imageCell = contentCells[1];
 
   const catLink = categoryCell?.querySelector('a');
   const catText = categoryCell?.textContent.trim();
@@ -39,7 +39,7 @@ export default async function decorate(block) {
     meta.className = 'hero-banner-meta';
 
     if (catText) {
-      const tag = document.createElement('a');
+      const tag = document.createElement(catLink ? 'a' : 'span');
       tag.className = 'hero-banner-category';
       tag.textContent = catText;
       if (catLink) tag.href = catLink.href;
@@ -50,6 +50,10 @@ export default async function decorate(block) {
       const dateEl = document.createElement('time');
       dateEl.className = 'hero-banner-date';
       dateEl.textContent = dateText;
+      const parsedDate = new Date(dateText);
+      if (!Number.isNaN(parsedDate.getTime())) {
+        dateEl.setAttribute('datetime', parsedDate.toISOString().split('T')[0]);
+      }
       meta.append(dateEl);
     }
 
