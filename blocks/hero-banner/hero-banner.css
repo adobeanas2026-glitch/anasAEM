@@ -45,7 +45,7 @@
   transition: background-color 0.2s ease;
 }
 
-.hero-banner .hero-banner-category:hover {
+.hero-banner a.hero-banner-category:hover {
   background-color: #cdd0d8;
   color: #333;
   text-decoration: none;
