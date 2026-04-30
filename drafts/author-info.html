@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Author Info — Test Draft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/scripts/aem.js" type="module"></script>
+  <script src="/scripts/scripts.js" type="module"></script>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<header></header>
+<main>
+
+  <!-- ── Scenario 1: Full example — linked name, title, all 3 social icons ── -->
+  <div>
+    <h2>How CISOs Build Lasting Resilience in the AI Era</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By <a href="https://www.splunk.com/en_us/blog/author/mfanning.html">Michael Fanning</a>, CISO at Splunk</p>
+        </div>
+        <div>
+          <p>
+            <a href="https://x.com/mfanning">X Profile</a>
+            <a href="https://www.linkedin.com/in/michael-fanning-01301a3/">LinkedIn Profile</a>
+            <a href="https://www.facebook.com/mfanning">Facebook Profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+  </div>
+
+  <!-- ── Scenario 2: Author name without a bio link (plain text) ─────────── -->
+  <div>
+    <h2>Scenario 2: Author with no bio link</h2>
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By Jane Smith, VP of Engineering</p>
+        </div>
+        <div>
+          <p>
+            <a href="https://x.com/janesmith">X Profile</a>
+            <a href="https://www.linkedin.com/in/janesmith/">LinkedIn Profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!-- ── Scenario 3: No social links at all ───────────────────────────────── -->
+  <div>
+    <h2>Scenario 3: No social links</h2>
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By <a href="https://example.com/bio/alex">Alex Johnson</a>, Senior Analyst</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!-- ── Scenario 4: Single social link ───────────────────────────────────── -->
+  <div>
+    <h2>Scenario 4: Single social link</h2>
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By <a href="https://example.com/bio/sara">Sara Lee</a>, Director of Security</p>
+        </div>
+        <div>
+          <p><a href="https://www.linkedin.com/in/saralee/">LinkedIn Profile</a></p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!-- ── Scenario 5: Unknown social domain (graceful fallback) ────────────── -->
+  <div>
+    <h2>Scenario 5: Unknown social domain fallback</h2>
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By <a href="https://example.com/bio/chris">Chris Park</a>, Principal Engineer</p>
+        </div>
+        <div>
+          <p>
+            <a href="https://github.com/chrispark">GitHub</a>
+            <a href="https://www.linkedin.com/in/chrispark/">LinkedIn Profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+</main>
+<footer></footer>
+</body>
+</html>
