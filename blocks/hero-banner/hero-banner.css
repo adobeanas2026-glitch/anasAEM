@@ -1,0 +1,116 @@
+.hero-banner-container .hero-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-banner {
+  background-color: #eef0f4;
+  padding: 40px 24px;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+
+.hero-banner .hero-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-banner .hero-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Metadata row ─────────────────────────────────────────────────────────── */
+
+.hero-banner .hero-banner-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-banner .hero-banner-category {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e2e8;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.hero-banner .hero-banner-category:hover {
+  background-color: #cdd0d8;
+  color: #333;
+  text-decoration: none;
+}
+
+.hero-banner .hero-banner-date,
+.hero-banner .hero-banner-read-time {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.hero-banner .hero-banner-pipe::before {
+  content: '|';
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* ── Heading ──────────────────────────────────────────────────────────────── */
+
+.hero-banner h1 {
+  color: #111;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 16px 0 0;
+}
+
+/* ── Image ────────────────────────────────────────────────────────────────── */
+
+.hero-banner .hero-banner-image {
+  flex-shrink: 0;
+}
+
+.hero-banner .hero-banner-image picture,
+.hero-banner .hero-banner-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (width >= 600px) {
+  .hero-banner {
+    padding: 48px 32px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-banner {
+    padding: 60px 64px;
+  }
+
+  .hero-banner .hero-banner-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .hero-banner .hero-banner-image {
+    flex: 0 0 340px;
+  }
+}

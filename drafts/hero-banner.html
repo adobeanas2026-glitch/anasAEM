@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hero Banner — Test Draft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/scripts/aem.js" type="module"></script>
+  <script src="/scripts/scripts.js" type="module"></script>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<header></header>
+<main>
+
+  <!-- ── Variant 1: with article image (matches Splunk layout) ─────────── -->
+  <div>
+    <div class="hero-banner block" data-block-name="hero-banner">
+
+      <!-- Row 1: Metadata — Category | Date | Read time -->
+      <div>
+        <div><p><a href="#">CISO Circle</a></p></div>
+        <div><p>February 24, 2026</p></div>
+        <div><p>5 Minute Read</p></div>
+      </div>
+
+      <!-- Row 2: Heading (left) | Article image (right) -->
+      <div>
+        <div><h1>How CISOs Build Lasting Resilience in the AI Era</h1></div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='680' height='460'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2a4a'/%3E%3Cstop offset='1' stop-color='%230d1830'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='680' height='460' fill='url(%23g)'/%3E%3Ccircle cx='520' cy='180' r='160' fill='%23e07020' opacity='.25'/%3E%3Ccircle cx='200' cy='320' r='120' fill='%23e07020' opacity='.15'/%3E%3Crect x='80' y='160' width='200' height='140' rx='8' fill='%23253560' opacity='.8'/%3E%3Crect x='400' y='200' width='180' height='120' rx='8' fill='%23253560' opacity='.8'/%3E%3C/svg%3E"
+              alt="Two professionals in a cybersecurity operations center"
+              width="680"
+              height="460"
+            >
+          </picture>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Variant 2: heading only, no image ─────────────────────────────── -->
+  <div>
+    <div class="hero-banner block" data-block-name="hero-banner">
+
+      <!-- Row 1: Metadata — Category | Date (no read time) -->
+      <div>
+        <div><p><a href="#">Security</a></p></div>
+        <div><p>April 30, 2026</p></div>
+      </div>
+
+      <!-- Row 2: Heading only (single column, full width) -->
+      <div>
+        <div><h1>Securing the Enterprise in a World of AI-Powered Threats</h1></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+<footer></footer>
+</body>
+</html>
