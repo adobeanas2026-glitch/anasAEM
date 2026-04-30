@@ -4,169 +4,113 @@
 }
 
 .hero-banner {
-  position: relative;
-  background-color: #1a2035;
-  color: #fff;
-  padding: 60px 24px 80px;
-  overflow: hidden;
+  background-color: #eef0f4;
+  padding: 40px 24px;
 }
 
-/* Background image (appended last in DOM, positioned to fill) */
-.hero-banner .hero-banner-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
+/* ── Layout ───────────────────────────────────────────────────────────────── */
 
-.hero-banner .hero-banner-background picture,
-.hero-banner .hero-banner-background img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.2;
-}
-
-/* Dark gradient overlay sits between background and content */
-.hero-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgb(26 32 53 / 93%) 45%, rgb(26 32 53 / 65%));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Content */
 .hero-banner .hero-banner-content {
-  position: relative;
-  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-/* Category badge */
+.hero-banner .hero-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Metadata row ─────────────────────────────────────────────────────────── */
+
+.hero-banner .hero-banner-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .hero-banner .hero-banner-category {
-  display: inline-block;
-  background-color: #5cc05e;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e2e8;
+  color: #333;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 3px;
-  margin-bottom: 20px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
 .hero-banner .hero-banner-category:hover {
-  background-color: #48a84b;
-  color: #fff;
+  background-color: #cdd0d8;
+  color: #333;
   text-decoration: none;
 }
 
-/* Heading */
+.hero-banner .hero-banner-date,
+.hero-banner .hero-banner-read-time {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.hero-banner .hero-banner-pipe::before {
+  content: '|';
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* ── Heading ──────────────────────────────────────────────────────────────── */
+
 .hero-banner h1 {
-  color: #fff;
-  font-size: clamp(26px, 4vw, 46px);
+  color: #111;
+  font-size: clamp(30px, 4vw, 50px);
   font-weight: 700;
-  line-height: 1.15;
-  margin: 0 0 28px;
-  max-width: 800px;
+  line-height: 1.1;
+  margin: 16px 0 0;
 }
 
-/* Meta row: author + date */
-.hero-banner .hero-banner-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+/* ── Image ────────────────────────────────────────────────────────────────── */
 
-/* Author */
-.hero-banner .hero-banner-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-banner .hero-banner-author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  overflow: hidden;
+.hero-banner .hero-banner-image {
   flex-shrink: 0;
-  background-color: #2e3654;
-  border: 2px solid rgb(255 255 255 / 20%);
 }
 
-.hero-banner .hero-banner-author-avatar picture,
-.hero-banner .hero-banner-author-avatar img {
+.hero-banner .hero-banner-image picture,
+.hero-banner .hero-banner-image img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  border-radius: 4px;
   object-fit: cover;
 }
 
-.hero-banner .hero-banner-author-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.hero-banner .hero-banner-author-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.hero-banner .hero-banner-author-role {
-  font-size: 13px;
-  color: #8b99be;
-}
-
-/* Separator between author and date */
-.hero-banner .hero-banner-author + .hero-banner-date::before {
-  content: '·';
-  margin-right: 16px;
-  color: #4a5578;
-}
-
-/* Date */
-.hero-banner .hero-banner-date {
-  font-size: 13px;
-  color: #8b99be;
-}
-
-/* Intro text */
-.hero-banner .hero-banner-intro {
-  margin-top: 28px;
-  padding-top: 28px;
-  border-top: 1px solid rgb(255 255 255 / 12%);
-  max-width: 720px;
-}
-
-.hero-banner .hero-banner-intro p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #b0bad6;
-  margin: 0;
-}
-
-.hero-banner .hero-banner-intro p + p {
-  margin-top: 16px;
-}
+/* ── Responsive ───────────────────────────────────────────────────────────── */
 
 @media (width >= 600px) {
   .hero-banner {
-    padding: 80px 32px 100px;
+    padding: 48px 32px;
   }
 }
 
 @media (width >= 900px) {
   .hero-banner {
-    padding: 100px 64px 120px;
+    padding: 60px 64px;
+  }
+
+  .hero-banner .hero-banner-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .hero-banner .hero-banner-image {
+    flex: 0 0 340px;
   }
 }

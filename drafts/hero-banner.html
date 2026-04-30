@@ -11,93 +11,54 @@
 <body>
 <header></header>
 <main>
+
+  <!-- ── Variant 1: with article image (matches Splunk layout) ─────────── -->
   <div>
     <div class="hero-banner block" data-block-name="hero-banner">
 
-      <!-- Row 1: Category tag -->
-      <div><div><p><a href="#">CISO Circle</a></p></div></div>
-
-      <!-- Row 2: Heading -->
-      <div><div><h1>How CISOs Build Lasting Resilience in the AI Era</h1></div></div>
-
-      <!-- Row 3: Author — two columns: [avatar] | [name, role] -->
+      <!-- Row 1: Metadata — Category | Date | Read time -->
       <div>
+        <div><p><a href="#">CISO Circle</a></p></div>
+        <div><p>February 24, 2026</p></div>
+        <div><p>5 Minute Read</p></div>
+      </div>
+
+      <!-- Row 2: Heading (left) | Article image (right) -->
+      <div>
+        <div><h1>How CISOs Build Lasting Resilience in the AI Era</h1></div>
         <div>
           <picture>
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23485070'/%3E%3Ctext x='24' y='30' font-family='Arial' font-size='15' font-weight='bold' text-anchor='middle' fill='white'%3EMF%3C/text%3E%3C/svg%3E"
-              alt="Michael Fanning"
-              width="48"
-              height="48"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='680' height='460'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2a4a'/%3E%3Cstop offset='1' stop-color='%230d1830'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='680' height='460' fill='url(%23g)'/%3E%3Ccircle cx='520' cy='180' r='160' fill='%23e07020' opacity='.25'/%3E%3Ccircle cx='200' cy='320' r='120' fill='%23e07020' opacity='.15'/%3E%3Crect x='80' y='160' width='200' height='140' rx='8' fill='%23253560' opacity='.8'/%3E%3Crect x='400' y='200' width='180' height='120' rx='8' fill='%23253560' opacity='.8'/%3E%3C/svg%3E"
+              alt="Two professionals in a cybersecurity operations center"
+              width="680"
+              height="460"
             >
           </picture>
         </div>
-        <div>
-          <p>Michael Fanning</p>
-          <p>CISO at Splunk</p>
-        </div>
       </div>
-
-      <!-- Row 4: Date -->
-      <div><div><p>February 24, 2026</p></div></div>
-
-      <!-- Row 5: Intro paragraph -->
-      <div><div><p>As security leaders navigate an era of AI-driven threats and transformation, the CISO's function as a strategic architect and business enabler is intensifying — and so is the pressure to deliver measurable results.</p></div></div>
 
     </div>
   </div>
 
-  <!-- Example with background image variant -->
-  <div style="margin-top: 40px;">
-    <p style="padding: 16px; font-family: sans-serif; color: #666;">↓ Variant with background image</p>
+  <!-- ── Variant 2: heading only, no image ─────────────────────────────── -->
+  <div>
     <div class="hero-banner block" data-block-name="hero-banner">
 
-      <!-- Row 1: Background image (picture-only row) -->
+      <!-- Row 1: Metadata — Category | Date (no read time) -->
       <div>
-        <div>
-          <picture>
-            <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23233060'/%3E%3Cstop offset='1' stop-color='%23102040'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='500' fill='url(%23g)'/%3E%3Ccircle cx='900' cy='150' r='200' fill='%230d2040' opacity='.5'/%3E%3Ccircle cx='1100' cy='400' r='300' fill='%23162850' opacity='.4'/%3E%3C/svg%3E"
-              alt=""
-              width="1200"
-              height="500"
-            >
-          </picture>
-        </div>
+        <div><p><a href="#">Security</a></p></div>
+        <div><p>April 30, 2026</p></div>
       </div>
 
-      <!-- Row 2: Category tag -->
-      <div><div><p><a href="#">Security</a></p></div></div>
-
-      <!-- Row 3: Heading -->
-      <div><div><h1>Securing the Enterprise in a World of AI-Powered Threats</h1></div></div>
-
-      <!-- Row 4: Author -->
+      <!-- Row 2: Heading only (single column, full width) -->
       <div>
-        <div>
-          <picture>
-            <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23606888'/%3E%3Ctext x='24' y='30' font-family='Arial' font-size='15' font-weight='bold' text-anchor='middle' fill='white'%3EJS%3C/text%3E%3C/svg%3E"
-              alt="Jane Smith"
-              width="48"
-              height="48"
-            >
-          </picture>
-        </div>
-        <div>
-          <p>Jane Smith</p>
-          <p>VP of Security Research</p>
-        </div>
+        <div><h1>Securing the Enterprise in a World of AI-Powered Threats</h1></div>
       </div>
-
-      <!-- Row 5: Date -->
-      <div><div><p>April 30, 2026</p></div></div>
-
-      <!-- Row 6: Intro paragraph -->
-      <div><div><p>Machine learning is reshaping the attack surface faster than traditional defenses can adapt. Here's what enterprise security teams need to know to stay ahead.</p></div></div>
 
     </div>
   </div>
+
 </main>
 <footer></footer>
 </body>
