@@ -17,7 +17,7 @@
   main .floating-promo-grid > .default-content-wrapper,
   main .floating-promo-grid > .floating-promo-wrapper {
     max-width: unset;
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 0;
   }
 
