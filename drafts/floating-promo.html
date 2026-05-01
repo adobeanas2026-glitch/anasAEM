@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Floating Promo — Test Draft</title>
+  <title>Floating Promo — Full Page Layout Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/scripts/aem.js" type="module"></script>
   <script src="/scripts/scripts.js" type="module"></script>
@@ -12,10 +12,60 @@
 <header></header>
 <main>
 
-  <!-- ── Variant 1: Full block — image, title, description, CTA ─────────── -->
+  <!-- ── Section 1: Hero Banner ─────────────────────────────────────────── -->
   <div>
-    <h1>How CISOs Build Lasting Resilience in the AI Era</h1>
+    <div class="hero-banner block" data-block-name="hero-banner">
 
+      <!-- Row 1: Metadata — Category | Date | Read time -->
+      <div>
+        <div><p><a href="#">CISO Circle</a></p></div>
+        <div><p>February 24, 2026</p></div>
+        <div><p>5 Minute Read</p></div>
+      </div>
+
+      <!-- Row 2: Heading (left) | Article image (right) -->
+      <div>
+        <div><h1>How CISOs Build Lasting Resilience in the AI Era</h1></div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='680' height='460'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2a4a'/%3E%3Cstop offset='1' stop-color='%230d1830'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='680' height='460' fill='url(%23g)'/%3E%3Ccircle cx='520' cy='180' r='160' fill='%23e07020' opacity='.25'/%3E%3Ccircle cx='200' cy='320' r='120' fill='%23e07020' opacity='.15'/%3E%3Crect x='80' y='160' width='200' height='140' rx='8' fill='%23253560' opacity='.8'/%3E%3Crect x='400' y='200' width='180' height='120' rx='8' fill='%23253560' opacity='.8'/%3E%3C/svg%3E"
+              alt="Two professionals in a cybersecurity operations center"
+              width="680"
+              height="460"
+            >
+          </picture>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Section 2: Author Info ─────────────────────────────────────────── -->
+  <div>
+    <div class="author-info block" data-block-name="author-info">
+      <div>
+        <div>
+          <p>By <a href="https://www.splunk.com/en_us/blog/author/mfanning.html">Michael Fanning</a>, CISO at Splunk</p>
+        </div>
+        <div>
+          <p>
+            <a href="https://x.com/mfanning">X Profile</a>
+            <a href="https://www.linkedin.com/in/michael-fanning-01301a3/">LinkedIn Profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Section 3: Main Content + Floating Promo (2-column grid) ─────────
+       EDS will add class "floating-promo-container" to this section.
+       The default-content-wrapper (article body) becomes column 1.
+       The floating-promo-wrapper (promo card) becomes column 2 / sticky.
+       ────────────────────────────────────────────────────────────────────── -->
+  <div>
+
+    <!-- Floating Promo card (EDS places block before default content) -->
     <div class="floating-promo block" data-block-name="floating-promo">
 
       <!-- Row 1: Image -->
@@ -49,6 +99,7 @@
 
     </div>
 
+    <!-- Article body text (becomes default-content-wrapper) -->
     <p>For CISOs, the only constant is continual transformation. Although our mandate is risk mitigation, it was often reactive in nature. In 2026, the CISO's function as a strategic architect and business enabler is intensifying, with new requirements to secure AI initiatives and further drive digital resilience. The role has transcended mere cyber defense.</p>
 
     <p>This evolution signals deeper organizational duties, involvement, and impact. For instance, a staggering 96% of CISOs are now responsible for AI governance and risk management, which requires us to shape policy, vet models, and ensure secure adoption. This shift is happening against a backdrop of escalating challenges like increasingly sophisticated threat actor capabilities, quantifying and communicating ROI to leadership, and addressing the cybersecurity burnout epidemic. It's an uphill climb, but CISOs are forging on.</p>
@@ -56,66 +107,86 @@
     <p>To understand how they're navigating this expanded scope, a survey of 650 global CISOs was conducted for <em>The CISO Report: From Risk to Resilience in the AI Era</em>. What we found was that the most impactful security leaders aren't just enduring; they're innovating — leading their organizations into a future defined by intelligent, secure operations.</p>
 
     <p>The intersection of AI and cybersecurity is creating both unprecedented risks and remarkable opportunities. Security leaders who can harness AI's power while defending against AI-enhanced threats will define the next generation of enterprise security. This report explores how leading CISOs are building adaptive, resilient security programs that can withstand the pressures of 2026 and beyond.</p>
+
+    <p>AI-native threats are rewriting the rules of engagement. Adversaries now use generative models to craft phishing messages indistinguishable from legitimate communications, automate vulnerability research at scale, and even simulate trusted identities inside enterprise networks. The defensive surface has grown substantially, yet the time-to-detect window remains stubbornly wide at many organizations.</p>
+
+    <p>The CISOs who are winning this arms race share a common trait: they've embedded AI-powered detection into their core security stack and invested heavily in red-team automation. Rather than waiting for incidents to surface through alert queues, their platforms proactively hunt for anomalies and correlate weak signals across millions of events per second.</p>
+
+    <p>Talent remains the most constrained resource in the field. Sixty-three percent of respondents cited difficulty hiring qualified analysts as their top operational challenge, ahead of budget constraints and legacy infrastructure debt. In response, leading programs are deploying AI co-pilots for tier-1 analysts, reducing the mean time to triage by 40% and letting human talent focus on complex investigations that require contextual judgment.</p>
+
+    <p>Board-level accountability is another defining shift of the current era. In 58% of organizations surveyed, the CISO now presents quarterly to the board, up from 31% just three years ago. This increased visibility is a double-edged sword — it creates leverage to drive organizational change, but it also raises expectations for measurable outcomes that go beyond incident counts and patch velocity.</p>
+
   </div>
 
-  <!-- ── Variant 2: No description, no CTA ──────────────────────────────── -->
+  <!-- ── Section 4: Author Bio ───────────────────────────────────────────── -->
   <div>
-    <h2>Minimal variant (image + title only)</h2>
+    <h2>About the Author</h2>
+    <p>Michael Fanning is the Chief Information Security Officer at Splunk, where he leads global security strategy, risk management, and threat intelligence programs. With over 20 years of experience in cybersecurity, he advises Fortune 500 boards on AI governance and digital resilience. Michael holds a CISSP certification and an MBA from Georgetown University.</p>
+  </div>
 
-    <div class="floating-promo block" data-block-name="floating-promo">
+  <!-- ── Section 5: Related Articles ───────────────────────────────────────
+       Uses the cards block for a simple related-posts layout.
+       ────────────────────────────────────────────────────────────────────── -->
+  <div>
+    <h2>Related Articles</h2>
 
-      <!-- Row 1: Image -->
+    <div class="cards block" data-block-name="cards">
+
       <div>
         <div>
           <picture>
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='260'%3E%3Crect width='400' height='260' fill='%23e8ecf0'/%3E%3Crect x='80' y='60' width='240' height='140' rx='8' fill='%23c5ccd4'/%3E%3C/svg%3E"
-              alt="Abstract placeholder graphic"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%231a2a4a'/%3E%3Ccircle cx='200' cy='80' r='60' fill='%23e07020' opacity='.4'/%3E%3C/svg%3E"
+              alt="AI Security"
               width="400"
-              height="260"
+              height="200"
             >
           </picture>
         </div>
+        <div>
+          <h3>AI-Powered Threat Detection: What Works in 2026</h3>
+          <p>How leading teams are using machine learning to cut detection time in half.</p>
+          <p><a href="#">Read more</a></p>
+        </div>
       </div>
 
-      <!-- Row 2: Title only -->
       <div>
-        <div><h3>Security Trends Report</h3></div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%230d1830'/%3E%3Crect x='80' y='60' width='240' height='80' rx='8' fill='%23253560'/%3E%3C/svg%3E"
+              alt="Board Security"
+              width="400"
+              height="200"
+            >
+          </picture>
+        </div>
+        <div>
+          <h3>Communicating Risk to the Board: A CISO Playbook</h3>
+          <p>Practical frameworks for translating technical risk into business language.</p>
+          <p><a href="#">Read more</a></p>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%231a3a2a'/%3E%3Ccircle cx='300' cy='100' r='80' fill='%2320a060' opacity='.3'/%3E%3C/svg%3E"
+              alt="Zero Trust"
+              width="400"
+              height="200"
+            >
+          </picture>
+        </div>
+        <div>
+          <h3>Zero Trust in Practice: Lessons from 200 Deployments</h3>
+          <p>What the data says about implementation timelines, pitfalls, and ROI.</p>
+          <p><a href="#">Read more</a></p>
+        </div>
       </div>
 
     </div>
-
-    <p>This variant tests that the block renders cleanly when description and CTA are omitted. The card should still float right and wrap body text to its left without leaving empty gaps or broken layout.</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-  </div>
-
-  <!-- ── Variant 3: No image ─────────────────────────────────────────────── -->
-  <div>
-    <h2>No-image variant (title + description + CTA)</h2>
-
-    <div class="floating-promo block" data-block-name="floating-promo">
-
-      <!-- Row 1: Title (no image row) -->
-      <div>
-        <div><h3>AI Security Playbook</h3></div>
-      </div>
-
-      <!-- Row 2: Description -->
-      <div>
-        <div><p>Practical guidance for securing your AI initiatives from day one.</p></div>
-      </div>
-
-      <!-- Row 3: CTA -->
-      <div>
-        <div><p><a href="#">Download now</a></p></div>
-      </div>
-
-    </div>
-
-    <p>This variant tests the no-image path. When an image is not provided, the card should render starting with the title. The card should still have a background, rounded corners, and the CTA button should appear correctly at the bottom.</p>
-
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
   </div>
 
 </main>
