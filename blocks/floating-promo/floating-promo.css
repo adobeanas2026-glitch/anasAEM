@@ -1,13 +1,11 @@
-/* ── Section layout ──────────────────────────────────────────────────────────
-   On desktop, turn the section into a 2-column grid:
-     column 1 (1fr)  → default-content-wrapper (article body)
-     column 2 (300px) → floating-promo-wrapper  (sticky sidebar)
+/* ── Section layout: 2-column grid (≥900px) ─────────────────────────────────
+   column 1 (1fr)   → .default-content-wrapper  (article body)
+   column 2 (300px) → .floating-promo-wrapper   (sidebar)
 
-   The sidebar column spans all grid rows so the card never wraps beneath
-   the body text. position:sticky keeps it visible while scrolling.
-
-   float is intentionally absent — float and position:sticky are mutually
-   exclusive, and float causes the body-text overlap reported in the live page.
+   The sidebar wrapper spans ALL grid rows so its height equals the full
+   article body height — this gives the sticky card the room it needs to
+   travel within the section.  When the section exits the viewport the card
+   exits with it, so it never overlaps sections above or below.
    ─────────────────────────────────────────────────────────────────────────── */
 @media (width >= 900px) {
   main .section.floating-promo-container {
@@ -20,25 +18,29 @@
     padding: 0 32px;
   }
 
-  /* Reset per-wrapper centering — section grid handles layout now */
+  /* Reset per-wrapper globals — grid container handles sizing */
   main .section.floating-promo-container > div {
     max-width: unset;
     margin: 0;
     padding: 0;
   }
 
-  /* Body text: left column, stacks across as many rows as needed */
   main .section.floating-promo-container .default-content-wrapper {
     grid-column: 1;
   }
 
-  /* Sidebar: right column, spans all rows + sticky */
+  /* Sidebar column spans every row → full section height → bounds the sticky */
   main .section.floating-promo-container .floating-promo-wrapper {
     grid-column: 2;
     grid-row: 1 / -1;
-    align-self: start;
+  }
+
+  /* Card is sticky *inside* the sidebar column.
+     Stops naturally when the section boundary is reached. */
+  main .section.floating-promo-container .floating-promo {
     position: sticky;
     top: calc(var(--nav-height) + 1.5rem);
+    margin-top: 0;
   }
 }
 
@@ -48,7 +50,7 @@ main .floating-promo {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 1.5rem; /* spacing above the card */
+  margin-top: 1.5rem;
 }
 
 main .floating-promo .floating-promo-image picture,
