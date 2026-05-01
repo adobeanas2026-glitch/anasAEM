@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Floating Promo — Test Draft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/scripts/aem.js" type="module"></script>
+  <script src="/scripts/scripts.js" type="module"></script>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<header></header>
+<main>
+
+  <!-- ── Variant 1: Full block — image, title, description, CTA ─────────── -->
+  <div>
+    <h1>How CISOs Build Lasting Resilience in the AI Era</h1>
+
+    <div class="floating-promo block" data-block-name="floating-promo">
+
+      <!-- Row 1: Image -->
+      <div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='260'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2a4a'/%3E%3Cstop offset='1' stop-color='%230d1830'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='260' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='100' r='100' fill='%23e07020' opacity='.3'/%3E%3Ccircle cx='100' cy='200' r='80' fill='%23e07020' opacity='.2'/%3E%3Crect x='40' y='80' width='140' height='100' rx='6' fill='%23253560' opacity='.9'/%3E%3Crect x='220' y='120' width='120' height='80' rx='6' fill='%23253560' opacity='.9'/%3E%3C/svg%3E"
+              alt="Two security professionals reviewing AI-powered threat dashboards"
+              width="400"
+              height="260"
+            >
+          </picture>
+        </div>
+      </div>
+
+      <!-- Row 2: Title -->
+      <div>
+        <div><h3>The CISO Report 2026</h3></div>
+      </div>
+
+      <!-- Row 3: Description -->
+      <div>
+        <div><p>Learn how CISOs are transforming AI risk into AI-powered resilience.</p></div>
+      </div>
+
+      <!-- Row 4: CTA link -->
+      <div>
+        <div><p><a href="#">Read the report</a></p></div>
+      </div>
+
+    </div>
+
+    <p>For CISOs, the only constant is continual transformation. Although our mandate is risk mitigation, it was often reactive in nature. In 2026, the CISO's function as a strategic architect and business enabler is intensifying, with new requirements to secure AI initiatives and further drive digital resilience. The role has transcended mere cyber defense.</p>
+
+    <p>This evolution signals deeper organizational duties, involvement, and impact. For instance, a staggering 96% of CISOs are now responsible for AI governance and risk management, which requires us to shape policy, vet models, and ensure secure adoption. This shift is happening against a backdrop of escalating challenges like increasingly sophisticated threat actor capabilities, quantifying and communicating ROI to leadership, and addressing the cybersecurity burnout epidemic. It's an uphill climb, but CISOs are forging on.</p>
+
+    <p>To understand how they're navigating this expanded scope, a survey of 650 global CISOs was conducted for <em>The CISO Report: From Risk to Resilience in the AI Era</em>. What we found was that the most impactful security leaders aren't just enduring; they're innovating — leading their organizations into a future defined by intelligent, secure operations.</p>
+
+    <p>The intersection of AI and cybersecurity is creating both unprecedented risks and remarkable opportunities. Security leaders who can harness AI's power while defending against AI-enhanced threats will define the next generation of enterprise security. This report explores how leading CISOs are building adaptive, resilient security programs that can withstand the pressures of 2026 and beyond.</p>
+  </div>
+
+  <!-- ── Variant 2: No description, no CTA ──────────────────────────────── -->
+  <div>
+    <h2>Minimal variant (image + title only)</h2>
+
+    <div class="floating-promo block" data-block-name="floating-promo">
+
+      <!-- Row 1: Image -->
+      <div>
+        <div>
+          <picture>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='260'%3E%3Crect width='400' height='260' fill='%23e8ecf0'/%3E%3Crect x='80' y='60' width='240' height='140' rx='8' fill='%23c5ccd4'/%3E%3C/svg%3E"
+              alt="Abstract placeholder graphic"
+              width="400"
+              height="260"
+            >
+          </picture>
+        </div>
+      </div>
+
+      <!-- Row 2: Title only -->
+      <div>
+        <div><h3>Security Trends Report</h3></div>
+      </div>
+
+    </div>
+
+    <p>This variant tests that the block renders cleanly when description and CTA are omitted. The card should still float right and wrap body text to its left without leaving empty gaps or broken layout.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </div>
+
+  <!-- ── Variant 3: No image ─────────────────────────────────────────────── -->
+  <div>
+    <h2>No-image variant (title + description + CTA)</h2>
+
+    <div class="floating-promo block" data-block-name="floating-promo">
+
+      <!-- Row 1: Title (no image row) -->
+      <div>
+        <div><h3>AI Security Playbook</h3></div>
+      </div>
+
+      <!-- Row 2: Description -->
+      <div>
+        <div><p>Practical guidance for securing your AI initiatives from day one.</p></div>
+      </div>
+
+      <!-- Row 3: CTA -->
+      <div>
+        <div><p><a href="#">Download now</a></p></div>
+      </div>
+
+    </div>
+
+    <p>This variant tests the no-image path. When an image is not provided, the card should render starting with the title. The card should still have a background, rounded corners, and the CTA button should appear correctly at the bottom.</p>
+
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+  </div>
+
+</main>
+<footer></footer>
+</body>
+</html>
