@@ -1,43 +1,38 @@
-/* ── Section layout: 2-column grid (≥900px) ─────────────────────────────────
-   column 1 (1fr)   → .default-content-wrapper  (article body)
-   column 2 (300px) → .floating-promo-wrapper   (sidebar)
+/* ── Article body + promo: 2-column grid (≥900px) ───────────────────────────
+   JS creates .floating-promo-grid and moves only .default-content-wrapper
+   and .floating-promo-wrapper into it.  Hero-banner and author-info remain
+   above the grid in normal document flow — the grid never touches them.
 
-   The sidebar wrapper spans ALL grid rows so its height equals the full
-   article body height — this gives the sticky card the room it needs to
-   travel within the section.  When the section exits the viewport the card
-   exits with it, so it never overlaps sections above or below.
+   .floating-promo-grid is a direct section child, so global styles supply
+   max-width: 1200px, margin: auto, and padding: 0 32px automatically.
    ─────────────────────────────────────────────────────────────────────────── */
 @media (width >= 900px) {
-  main .section.floating-promo-container {
+  main .floating-promo-grid {
     display: grid;
     grid-template-columns: 1fr 300px;
     column-gap: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 32px;
   }
 
-  /* Reset per-wrapper globals — grid container handles sizing */
-  main .section.floating-promo-container > div {
+  /* Reset global section > div sizing — the grid container already handles it */
+  main .floating-promo-grid > .default-content-wrapper,
+  main .floating-promo-grid > .floating-promo-wrapper {
     max-width: unset;
     margin: 0;
     padding: 0;
   }
 
-  main .section.floating-promo-container .default-content-wrapper {
+  main .floating-promo-grid > .default-content-wrapper {
     grid-column: 1;
   }
 
-  /* Sidebar column spans every row → full section height → bounds the sticky */
-  main .section.floating-promo-container .floating-promo-wrapper {
+  /* Sidebar spans all rows → wrapper height = article body height → bounds sticky */
+  main .floating-promo-grid > .floating-promo-wrapper {
     grid-column: 2;
     grid-row: 1 / -1;
   }
 
-  /* Card is sticky *inside* the sidebar column.
-     Stops naturally when the section boundary is reached. */
-  main .section.floating-promo-container .floating-promo {
+  /* Card sticks within the sidebar column, exits with the grid boundary */
+  main .floating-promo-grid .floating-promo {
     position: sticky;
     top: calc(var(--nav-height) + 1.5rem);
     margin-top: 0;
