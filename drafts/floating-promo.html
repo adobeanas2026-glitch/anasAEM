@@ -12,18 +12,24 @@
 <header></header>
 <main>
 
-  <!-- ── Section 1: Hero Banner ─────────────────────────────────────────── -->
+  <!-- ── Section 1: Everything in one section — matches live page structure ──
+       hero-banner, author-info, floating-promo, and article body are all
+       flat direct children of this section div (no nesting).
+       AEM EDS will create:
+         .hero-banner-wrapper, .author-info-wrapper, .floating-promo-wrapper
+         → all siblings in the section
+         .default-content-wrapper → wrapping the paragraphs
+       Then floating-promo.js wraps only .default-content-wrapper +
+       .floating-promo-wrapper in .floating-promo-grid.
+       ────────────────────────────────────────────────────────────────────── -->
   <div>
-    <div class="hero-banner block" data-block-name="hero-banner">
 
-      <!-- Row 1: Metadata — Category | Date | Read time -->
+    <div class="hero-banner block" data-block-name="hero-banner">
       <div>
         <div><p><a href="#">CISO Circle</a></p></div>
         <div><p>February 24, 2026</p></div>
         <div><p>5 Minute Read</p></div>
       </div>
-
-      <!-- Row 2: Heading (left) | Article image (right) -->
       <div>
         <div><h1>How CISOs Build Lasting Resilience in the AI Era</h1></div>
         <div>
@@ -37,12 +43,8 @@
           </picture>
         </div>
       </div>
-
     </div>
-  </div>
 
-  <!-- ── Section 2: Author Info ─────────────────────────────────────────── -->
-  <div>
     <div class="author-info block" data-block-name="author-info">
       <div>
         <div>
@@ -56,19 +58,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── Section 3: Main Content + Floating Promo (2-column grid) ─────────
-       EDS will add class "floating-promo-container" to this section.
-       The default-content-wrapper (article body) becomes column 1.
-       The floating-promo-wrapper (promo card) becomes column 2 / sticky.
-       ────────────────────────────────────────────────────────────────────── -->
-  <div>
-
-    <!-- Floating Promo card (EDS places block before default content) -->
     <div class="floating-promo block" data-block-name="floating-promo">
-
-      <!-- Row 1: Image -->
       <div>
         <div>
           <picture>
@@ -81,25 +72,17 @@
           </picture>
         </div>
       </div>
-
-      <!-- Row 2: Title -->
       <div>
         <div><h3>The CISO Report 2026</h3></div>
       </div>
-
-      <!-- Row 3: Description -->
       <div>
         <div><p>Learn how CISOs are transforming AI risk into AI-powered resilience.</p></div>
       </div>
-
-      <!-- Row 4: CTA link -->
       <div>
         <div><p><a href="#">Read the report</a></p></div>
       </div>
-
     </div>
 
-    <!-- Article body text (becomes default-content-wrapper) -->
     <p>For CISOs, the only constant is continual transformation. Although our mandate is risk mitigation, it was often reactive in nature. In 2026, the CISO's function as a strategic architect and business enabler is intensifying, with new requirements to secure AI initiatives and further drive digital resilience. The role has transcended mere cyber defense.</p>
 
     <p>This evolution signals deeper organizational duties, involvement, and impact. For instance, a staggering 96% of CISOs are now responsible for AI governance and risk management, which requires us to shape policy, vet models, and ensure secure adoption. This shift is happening against a backdrop of escalating challenges like increasingly sophisticated threat actor capabilities, quantifying and communicating ROI to leadership, and addressing the cybersecurity burnout epidemic. It's an uphill climb, but CISOs are forging on.</p>
@@ -118,15 +101,13 @@
 
   </div>
 
-  <!-- ── Section 4: Author Bio ───────────────────────────────────────────── -->
+  <!-- ── Section 2: Author Bio ───────────────────────────────────────────── -->
   <div>
     <h2>About the Author</h2>
     <p>Michael Fanning is the Chief Information Security Officer at Splunk, where he leads global security strategy, risk management, and threat intelligence programs. With over 20 years of experience in cybersecurity, he advises Fortune 500 boards on AI governance and digital resilience. Michael holds a CISSP certification and an MBA from Georgetown University.</p>
   </div>
 
-  <!-- ── Section 5: Related Articles ───────────────────────────────────────
-       Uses the cards block for a simple related-posts layout.
-       ────────────────────────────────────────────────────────────────────── -->
+  <!-- ── Section 3: Related Articles ───────────────────────────────────────── -->
   <div>
     <h2>Related Articles</h2>
 

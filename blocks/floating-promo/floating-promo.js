@@ -46,4 +46,17 @@ export default function decorate(block) {
   }
 
   block.append(body);
+
+  // Wrap only the article body and the promo sidebar in an inner grid container.
+  // This leaves hero-banner and author-info above the grid in normal document flow.
+  const section = block.closest('.section');
+  if (!section) return;
+  const contentWrapper = section.querySelector('.default-content-wrapper');
+  const promoWrapper = block.parentElement;
+  if (!contentWrapper || !promoWrapper) return;
+
+  const grid = document.createElement('div');
+  grid.className = 'floating-promo-grid';
+  contentWrapper.replaceWith(grid);
+  grid.append(contentWrapper, promoWrapper);
 }
